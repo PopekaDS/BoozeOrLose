@@ -3,6 +3,7 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.2
 
 Window {
+    id: mainscreen
     width: 640
     height: 480
     visible: true
@@ -22,6 +23,47 @@ Window {
 
         onSendQuit: {
         }
+    }
+
+    // StackView {
+    //     id: stackView
+    //     anchors.fill: parent
+    //     focus: true
+    //     initialItem: mainMenuStackComponent
+    //     // Описание первой страницы
+    //     Component {
+    //         id: mainMenuStackComponent
+    //         // На первой странице находится основное меню
+    //         // с кнопками "Игра" и "Настройки"
+    //         Button {
+    //             id: mainMenu
+    //             anchors.fill: parent
+    //             enabled: Stack.status === Stack.Active
+    //             width: 50
+    //             height: 50
+    //             text: "black"
+    //             onClicked: stackView.push(gamePanelStackComponent)
+    //         }
+    //     }
+    //     // Описание второй страницы
+    //     Component {
+    //         id: gamePanelStackComponent
+    //         Button { // На второй странице находится игра
+    //             id: gamePanel
+    //             anchors.fill: parent
+    //             enabled: Stack.status === Stack.Active
+    //             width: 50
+    //             height: 50
+    //             text: "blue"
+    //             onClicked: stackView.push(mainMenuStackComponent)
+    //         }
+    //     }
+    // }
+
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        focus: true
     }
 
     Column {
@@ -56,7 +98,9 @@ Window {
             height: 50
             text: qsTr("Правила")
 
-            onClicked: playscreen.receiveRules()
+            onClicked: {
+                playscreen.receiveRules()
+            }
         }
 
         Button {
@@ -72,4 +116,3 @@ Window {
         }
     }
 }
-
