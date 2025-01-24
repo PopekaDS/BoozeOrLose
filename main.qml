@@ -91,9 +91,49 @@ Window {
             Column {
                 Rectangle {
                     id: logo
-                    width: 50
-                    height: 50
-                    color: "black"
+                    width: 150
+                    height: 150
+                    // color: "black"
+                    Text {
+                        id: quest
+                        text: qsTr("Тут вопрос")
+                    }
+                }
+
+                Button {
+                    text: "menu"
+
+                    onClicked: {
+
+                    }
+                }
+
+                Text {
+                    text: qsTr("1 / 100")
+                }
+
+                Button {
+                    text: qsTr("Ответ 1")
+                }
+
+                Button {
+                    text: qsTr("Ответ 2")
+                }
+
+                Button {
+                    text: qsTr("Ответ 3")
+                }
+
+                Button {
+                    text: qsTr("Ответ")
+                }
+
+                Button {
+                    text: qsTr("Пред.")
+                }
+
+                Button {
+                    text: qsTr("След.")
                 }
 
                 Button {
